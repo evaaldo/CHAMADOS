@@ -1,0 +1,10 @@
+﻿CREATE DATABASE Ecommerce;
+
+CREATE TABLE costumers (
+    ID SERIAL PRIMARY KEY,
+    NAME VARCHAR(100) NOT NULL,
+    PASSWORD VARCHAR(100) NOT NULL,
+    EMAIL VARCHAR(100) UNIQUE NOT NULL
+);
+
+INSERT INTO costumers (NAME, PASSWORD, EMAIL) VALUES ('admin', 'admin', 'admin@example.com');
