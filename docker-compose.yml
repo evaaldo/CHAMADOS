@@ -1,6 +1,18 @@
 version: '3.8'
 
 services:
+  backend:
+    build: 
+      context: .
+      dockerfile: Backend/Backend/Dockerfile
+    container_name: backend
+    depends_on:
+      - db
+    ports:
+      - 5000:5000
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__db=Host=db;Port=5432;Database=Ecommerce;Username=admin;Password=admin
   db:
     image: postgres
     container_name: db
